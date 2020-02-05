@@ -22,7 +22,7 @@ ygrid <- c(starty, starty + (1:(brow-1))*ylength)
 Bmean <- expand.grid(xgrid, ygrid, KEEP.OUT.ATTRS = FALSE)
 
 Amean <- matrix(nrow = a, ncol = 2)
-for(i in 1:a)  Amean[i,] <- colMeans(Bmean2[A_neighbors_ind[[i]], ])
+for(i in 1:a)  Amean[i,] <- colMeans(Bmean[A_neighbors_ind[[i]], ])
 
 D <- rdist(Amean)
 iters <- 100000
