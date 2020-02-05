@@ -38,7 +38,7 @@ save(post_adv, file = paste0("post_adv_",model_num, "iters_", iters,  format(Sys
 source("boxes_ancillary_functions.R")
 D2 <- exp(-rdist(Amean)) #These functions require different distance matrix ('boxes_ancillary_functions.R')
 post_int <- MCMC_together(A_sites, B_sites, deltax, deltay,
-                          Psix, Psiy, D = D, iters = iters, report_acceptance = TRUE)
+                          Psix, Psiy, D = D2, iters = iters, report_acceptance = TRUE)
 post_simp <- MCMC_together_nocorr(A_sites, B_sites, deltax, deltay,
                                   Psix, Psiy, iters = iters)
 save(post_int, file = paste0("post_int_", "iters_", iters,  format(Sys.time(), "_%Y%m%d_%H%M_"),".RData"))
