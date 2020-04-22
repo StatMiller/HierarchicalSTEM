@@ -91,7 +91,7 @@ simul_boxes <- foreach(i = 1:nsimul, .packages = c("fields", "MASS", "coda")) %d
   mean_A <-  mean_Asites(A_neighbors, A_neighbors_ind, a, beta, alpha0, alpha1)
   
   d.atoms <- rdist(mean_A$unweighted)
-  r <- 0.57 
+  r <- 0.73 
   rho <- 100 
   Sigma_atoms <- sd_a^2*((1-r)*diag(a) + r*exp(-d.atoms/rho))
   
@@ -149,9 +149,9 @@ simul_boxes <- foreach(i = 1:nsimul, .packages = c("fields", "MASS", "coda")) %d
   }
   
   #Make covariance matrices 
-  r_pix <- .9 
+  r_pix <- .57 
   rho_pix <- 5.5 
-  sigma2 <- 220^2 
+  sigma2 <- 140^2 
   
   d.a   <- expand.grid(1:A_width-1,1:A_width-1)
   d.a   <- as.matrix(dist(d.a))
